@@ -13,12 +13,12 @@ class BSTIterator {
 public:
     stack<TreeNode*> s;
     void push_allLeft(TreeNode* root){
-        if(root == NULL){
-            return;
-        }
+        TreeNode* curr = root;
 
-        s.push(root);
-        push_allLeft(root->left);
+        while(curr != NULL){
+            s.push(curr);
+            curr = curr->left;
+        }
     }
 
     BSTIterator(TreeNode* root) {
