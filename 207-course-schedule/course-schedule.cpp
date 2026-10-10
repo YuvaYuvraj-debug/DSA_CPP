@@ -5,15 +5,15 @@ public:
         recPath[src] = true;
 
         for(int i = 0; i < edges.size(); i++){
-            int v = edges[i][0];
-            int u = edges[i][1];
+            int u = edges[i][0];
+            int v = edges[i][1];
 
-            if(u == src){
-                if(!vis[v]){
-                    if(isCycle(v, vis, recPath, edges)){
+            if(src == v){
+                if(!vis[u]){
+                    if(isCycle(u, vis, recPath, edges)){
                         return true;
                     }
-                }else if(recPath[v]){
+                }else if(recPath[u]){
                     return true;
                 }
             }
